@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view >
+
+  <button bindtap="button_xiaomage">小码哥教育：</button>
+
+    <!-- 轮播图  -->
+      <swiper class = "header-swiper" autoplay="true" scroll-x="true" interval="3000" duration="1000">
+        <block wx:for-items="{{ads}}">
+          <swiper-item>
+            <image class = "header-swiper-img" src="{{ item.img_url }}" mode="aspectFill" ></image>
+          </swiper-item>
+        </block>
+      </swiper> 
+
+
+ 
+  <!-- scroll列表图  -->
+  <scroll-view scroll-y="true" style="height:300%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+       
+       <block wx:for-items="{{ motto }}">
+          <swiper-item>
+            <view  class="content-text" >
+            <Text style="content-text" >{{item.name}}</Text>
+           </view>
+          </swiper-item>
+        </block>
+    </scroll-view>
+
+
+
+</view>
